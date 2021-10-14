@@ -10,7 +10,7 @@ namespace HomeworkOne
         /// <returns></returns>
         public static void AddTwoNumbers()
         {
-            Console.WriteLine("Inside AddTwoNumbers()");
+            Console.WriteLine("Inside AddTwoNumbers method");
             
             Console.Write("Type a number, and then press Enter: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
