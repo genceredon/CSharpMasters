@@ -8,5 +8,12 @@ namespace Homework3
 {
     public class ContractualType : Employee
     {
+        public int HourlyPay { get; set; }
+        public int TotalHours { get; set; }
+
+        public override int GetMonthlyPayout()
+        {
+            return this.TotalHours * this.HourlyPay;
+        }
     }
 }

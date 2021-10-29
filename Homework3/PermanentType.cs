@@ -8,5 +8,11 @@ namespace Homework3
 {
     public class PermanentType : Employee
     {
+        public int AnnualSalary { get; set; }
+
+        public override int GetMonthlyPayout()
+        {
+            return this.AnnualSalary / 12;
+        }
     }
 }

@@ -16,22 +16,23 @@ namespace Homework3
                 case "p":
                     Console.WriteLine("Permanent Employee Detail");
                     var permEmp = new PermanentType();
-                    EmployeeDetail(permEmp);
+                    EmployeeDetail(permEmp);                
                     break;
                 case "C":
                 case "c":
                     Console.WriteLine("Contractual Employee Detail");
                     var contEmp = new ContractualType();
-                    EmployeeDetail(contEmp);
+                    EmployeeDetail(contEmp);         
                     break;
                 default:
                     Console.WriteLine("Invalid Employee Type");
                     break;
             }
         }
+
         #region Private Methods
 
-        private static PermanentType EmployeeDetail(PermanentType empDetail)
+        private static void EmployeeDetail(PermanentType empDetail)
         {
             Console.Write("Employee Firstname: ");
             empDetail.FirstName = Console.ReadLine();
@@ -42,10 +43,15 @@ namespace Homework3
             Console.Write("Employee Middlename: ");
             empDetail.MiddleName = Console.ReadLine();
 
-            return empDetail;
+            Console.Write("Annual Salary: ");
+            empDetail.AnnualSalary = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("---------------------------------------------------- ");
+            Console.WriteLine("Monthly Payout: ");
+            Console.Write(empDetail.GetMonthlyPayout());
         }
 
-        private static ContractualType EmployeeDetail(ContractualType empDetail)
+        private static void EmployeeDetail(ContractualType empDetail)
         {
             Console.Write("Employee Firstname: ");
             empDetail.FirstName = Console.ReadLine();
@@ -56,7 +62,16 @@ namespace Homework3
             Console.Write("Employee Middlename: ");
             empDetail.MiddleName = Console.ReadLine();
 
-            return empDetail;
+            Console.Write("Hourly Pay: ");
+            empDetail.HourlyPay = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Total Hours: ");
+            empDetail.TotalHours = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("---------------------------------------------------- ");
+            Console.WriteLine("Monthly Payout: ");
+            Console.Write(empDetail.GetMonthlyPayout());
+
         }
 
         #endregion
